@@ -1,6 +1,7 @@
 class Listing < ApplicationRecord
   
   def gps_coordinates
-    Geocoder.search(address)
+    result = Geocoder.search(address)
+    result.first.coordinates
   end
 end
